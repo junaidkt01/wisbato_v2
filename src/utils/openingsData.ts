@@ -1,0 +1,107 @@
+export const openings = [
+  {
+    id: 1,
+    slug: "digital-marketing-specialist",
+    name: "digital marketing specialist",
+    experience: "1 to 2 years",
+    location: "Kozhikode",
+    category: "Marketing",
+    bgColor: "#FFDD78",
+    description: [
+      {
+        id: 1,
+        title: "Responsibilities",
+        points: [
+          "Manage social media marketing campaigns, digital marketing campaigns, web analytics, online marketing, and communication on a day-to-day basis.",
+          "Craft and execute effective digital marketing strategies.",
+          "Work closely with international clients, especially those in the GCC Countries.",
+          "Generate quality leads consistently through Facebook Ads.",
+          "Develop comprehensive digital marketing strategies and plans for clients.",
+        ],
+      },
+      {
+        id: 2,
+        title: "Requirements",
+        points: [
+          "1-2 years of experience in digital marketing.",
+          "Extensive experience in Social Media Marketing (Lead Generation), SEO, SEM, and Google Ads.",
+          "Ability to handle all aspects of digital marketing.",
+          "Previous experience with international clients, especially in the GCC Countries.",
+          "Expertise in generating quality leads from Facebook Ads on a regular basis.",
+          "Proficiency in developing digital marketing strategies and plans for clients.",
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    slug: "full-stack-net-developer",
+    name: "Full Stack .NET Developer",
+    experience: "1 to 2 years",
+    location: "Kozhikode",
+    category: "Development",
+    bgColor: "#FFDD78",
+    description: [
+      {
+        id: 1,
+        title: "Responsibilities",
+        points: [
+          "Write clean code, design, and develop software applications.",
+          "Troubleshoot and debug applications.",
+          "Deploy applications.",
+          "Communicate effectively with team members, stakeholders, and end-users to understand requirements and translate them into technical solutions.",
+        ],
+      },
+      {
+        id: 2,
+        title: "Requirements",
+        points: [
+          "Familiarity with WebSocket connections.",
+          "Dashboard integration.",
+          "Rest API integration.",
+          "Object-Oriented Programming (OOP) and programming skills.",
+          "Experience in Software Development and .NET Core.",
+          "Experience with ASP.NET MVC framework.",
+          "Knowledge of SQL, MongoDB, and familiarity with database integration and management.",
+          "Knowledge of software testing and debugging practices.",
+          "Excellent problem-solving skills and attention to detail.",
+          "Bachelor's degree in Computer Science, Software Engineering, or related field.",
+          "Experience with Agile/Scrum methodologies is a plus.",
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    slug:"php-developer-woocommerce-developer",
+    name: "PHP Developer / WooCommerce Developer",
+    experience: "2+ years",
+    location: "Kozhikode",
+    category: "Development",
+    bgColor: "#FFDD78",
+    description: [
+      {
+        id: 1,
+        title: "Responsibilities",
+        points: [
+          "Develop and maintain PHP-based applications, including WooCommerce websites.",
+          "Utilize Rest APIs in application development.",
+          "Implement and customize Wordpress functionalities.",
+          "Write efficient SQL queries for database operations.",
+          "Create responsive and user-friendly web interfaces using HTML 5, CSS3, and Bootstrap.",
+          "Follow best design and coding practices.",
+        ],
+      },
+      {
+        id: 2,
+        title: "Requirements",
+        points: [
+          "Experience working with PHP (Any Framework), Wordpress, SQL, JavaScript, jQuery, and GitHub.",
+          "Knowledge of HTML 5, CSS3, and Bootstrap.",
+          "Excellent understanding of OOPS/MVC concepts.",
+          "Prior experience in the Ecommerce & payment gateway domain is a plus.",
+        ],
+      },
+    ],
+  },
+];

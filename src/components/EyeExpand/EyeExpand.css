@@ -1,0 +1,75 @@
+.eye-expand-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  border-bottom: 1px solid #000;
+  padding: 24px 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 0;
+  }
+}
+
+.eye-expand-texts {
+  display: grid;
+
+  /* width: 200px; */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+}
+
+.eye-expand-texts p {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0em;
+  max-width: 80%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    max-width: 95%;
+  }
+}
+
+.eye-expand-texts div p a {
+  text-decoration: none;
+}
+
+.eye-expand-texts div p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  max-width: 80%;
+
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s, padding-top 0.5s;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    max-width: 95%;
+  }
+}
+
+.opened-eye,
+.closed-eye {
+  min-width: 40px;
+  min-height: 40px;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    min-width: 20px;
+    min-height: 20px;
+  }
+}
+
+.eye-expand-texts .expanded p {
+  max-height: 100%;
+  padding-top: 24px;
+}

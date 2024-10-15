@@ -1,0 +1,292 @@
+.works-portfolio {
+  margin: 60px;
+
+  @media screen and (max-width: 768px) {
+    margin: 24px;
+  }
+}
+
+.all-portfolio-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 32px;
+    flex-direction: column;
+    align-items: end;
+  }
+}
+
+.portfolio-container-title {
+  font-size: 72px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 63px;
+
+    width: 100%;
+  }
+}
+
+.work-img {
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
+}
+
+/* .all-portfolio-title-section button {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+
+  padding: 16px;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+    font-size: 14px;
+  }
+} */
+
+/* ***********************************
+        work-detailed-section
+*********************************** */
+
+.work-detailed-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-banner-section {
+  width: 100%;
+  padding: 200px 60px 120px 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media screen and (max-width: 768px) {
+    padding: 130px 24px 80px 24px;
+  }
+}
+
+.industry-section {
+  text-transform: uppercase;
+  color: white;
+
+  font-size: clamp(19px, 4vw, 24px);
+}
+
+.industry-title {
+  opacity: 0.5;
+}
+
+.img-banner {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-banner .company-name {
+  font-size: clamp(48px, 6vw, 120px);
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.img-banner img {
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* **************************
+      works-description
+************************** */
+
+.work-description-section {
+  padding: 120px 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 60px 24px;
+    gap: 30px;
+  }
+}
+
+.work-description-section img {
+  border-radius: 4px;
+  object-fit: contain;
+
+  @media screen and (max-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.work-description-title {
+  text-transform: uppercase;
+  font-size: clamp(16px, 6vw, 72px);
+  font-weight: 500;
+}
+
+.work-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 60px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.service-provided {
+  flex: 1;
+}
+
+.service-provided h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+
+.work-description .work-description-paragraphs {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  font-weight: 400;
+  line-height: 31.27px;
+  line-height: 31.27px;
+
+  font-size: clamp(12px, 4vw, 24px);
+
+  @media screen and (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+/* ***************************
+case-studies-section
+*************************** */
+
+.case-studies-sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 120px;
+
+  @media screen and (max-width: 768px) {
+    gap: 60px;
+  }
+}
+
+.case-studies-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 60px;
+
+  padding: 0 60px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 24px;
+    gap: 30px;
+  }
+}
+
+.case-studies-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.case-studies-images img {
+  width: calc(100% - 10px);
+  margin: 5px;
+}
+
+@media (max-width: 600px) {
+  .case-studies-images img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.case-studies-section-desc {
+  padding: 0 200px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 0;
+  }
+}
+
+.case-studies-section-desc h1 {
+  font-size: 72px;
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 500;
+  text-align: center;
+  /* text-transform: uppercase; */
+
+  @media screen and (max-width: 768px) {
+    text-align: start;
+  }
+}
+
+.case-studies-section-desc h2 {
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  background-color: #f9d8b1;
+  padding: 10px 16px;
+  border-radius: 244px;
+
+  @media screen and (max-width: 768px) {
+    position: unset;
+    width: fit-content;
+  }
+}
+
+.case-studies-section-desc .work-description-paragraphs {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+
+  font-size: clamp(12px, 4vw, 24px);
+
+  @media screen and (max-width: 768px) {
+    text-align: start;
+  }
+}

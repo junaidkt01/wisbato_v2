@@ -1,0 +1,161 @@
+.teamcatecard-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 60px;
+}
+
+.teamcatecard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #FFF;
+}
+
+.teamcatecard {
+    margin-bottom: 30px;
+}
+
+.teamcatecard h1 {
+    color: #202124;
+    text-align: center;
+    font-size: clamp(34px, 4vw, 60px);
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.teamcatecard p {
+    color: #2F2F2F;
+
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-member {
+    width: calc(25% - 30px);
+    min-width: 250px;
+    border-radius: 20px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+    padding: 12px;
+}
+
+.team-member p {
+    margin: 0;
+    /* margin-top: 6px; */
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+
+.people-info {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: start;
+    gap: 5px;
+}
+
+.people-info h2 {
+    width: 100%;
+    color: #222;
+    /* font-size: 22px; */
+    font-size: clamp(18px,4vw,22px);
+
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.people-info p {
+    color: #444;
+    /* font-size: 16px; */
+    font-size: clamp(12px,4vw,16px);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.linked-in {
+    display: grid;
+    place-items: center;
+}
+
+/* reasponsive */
+
+@media screen and (max-width:1080px) {
+    .teamcatecard-container-wrapper {
+        margin: 30px;
+    }
+
+    .teamcatecard-container {
+        padding: 30px 30px;
+    }
+
+    .team-member {
+        width: calc(33.33% - 30px);
+    }
+    .linked-in{
+        place-items: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .teamcatecard-container-wrapper {
+        margin: 24px;
+    }
+
+    .teamcatecard-container {
+        padding: 24px 24px;
+    }
+
+    .team-member {
+        width: calc(50% - 30px);
+    }
+
+    .card-container {
+        gap: 16px;
+    }
+    .linked-in{
+        place-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .teamcatecard-container-wrapper {
+        margin: 16px;
+    }
+
+    .teamcatecard-container {
+        padding: 16px 16px;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+
+    .card-container {
+        gap: 16px;
+    }
+    .linked-in{
+        place-items: center;
+    }
+}

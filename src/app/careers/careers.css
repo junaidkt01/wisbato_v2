@@ -1,0 +1,508 @@
+.openings-section {
+  margin: 60px;
+
+  @media screen and (max-width: 768px) {
+    margin: 24px;
+  }
+}
+
+/* ************************ 
+      OpeningsTaps
+************************ */
+
+.openings-tabs-section {
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.tab-box {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 60px;
+  align-items: center;
+
+  border-bottom: 2px solid #878787;
+
+  position: relative;
+
+  overflow-y: auto;
+  white-space: nowrap;
+
+  @media screen and (max-width: 768px) {
+  }
+}
+
+.tab-box::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  font-size: 30px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 24px;
+
+  position: relative;
+}
+
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background-color: #f7931e;
+  border-radius: 57px;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active + .bottom-line {
+  width: auto;
+}
+
+.content-box {
+  margin-top: 20px;
+  animation: moving 0.3s ease;
+}
+
+/* ************************ 
+        OpeningsCard
+ ************************ */
+
+.openings-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 24px;
+}
+
+.openings-cards-list .openings-card {
+  /* flex-basis: calc(33.33% - 18px); */
+  flex-basis: calc(50% - 15px);
+  margin: 8px 0;
+
+  @media screen and (max-width: 768px) {
+    flex-basis: calc(100%);
+  }
+}
+
+.openings-card {
+  display: none;
+  background-color: #ffdd78;
+  padding: 24px;
+  text-transform: capitalize;
+
+  animation: movingTabs 0.7s ease-in-out;
+}
+
+@keyframes movingTabs {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.openings-card.active {
+  display: block;
+}
+
+.openings-card-title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+}
+
+.openings-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-bottom: 36px;
+
+  @media screen and (max-width: 768px) {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+}
+
+.openings-card div p {
+  font-size: 30px;
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+/* ************************ 
+      OpeningsEyeExpand
+ ************************ */
+
+.openings-eye-expand-component {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.openings-eye-expand {
+  border-bottom: 1px solid #000;
+}
+
+.openings-eye-expand-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 24px 0;
+}
+
+.openings-eye-expand-title p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  max-width: 95%;
+}
+
+/* *******************************
+    career-requirements-section
+******************************* */
+
+.career-requirements-section {
+  margin: 140px 60px;
+
+  @media screen and (max-width: 768px) {
+    margin: 140px 24px;
+  }
+}
+
+.careers-detailed-text-div {
+  display: grid;
+  gap: 60px;
+  @media screen and (max-width: 768px) {
+    gap: 24px;
+  }
+}
+
+.careers-detailed-text-div p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.careers-detailed-text-div p span {
+  color: #878787;
+}
+
+/* ************************
+      job requirements
+************************ */
+
+/* button  */
+
+.title-right .apply-btn {
+  background-color: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  border: 1px solid #000;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.title-right .share-btn {
+  background-color: #fff;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  border: 1px solid #000;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.title-right .share-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* button  */
+
+.careers-job-requirements {
+  background-color: #fff;
+  margin: 60px 200px;
+  padding: 60px;
+
+  border-radius: 4px;
+
+  @media screen and (max-width: 768px) {
+    margin: 60px 0px;
+    padding: 24px;
+  }
+}
+
+.requirements-top-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 24px;
+  text-transform: capitalize;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+  }
+}
+
+.requirements-top-section .title-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (max-width: 768px) {
+  }
+}
+.requirements-top-section .title-left .title {
+  font-size: 48px;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+.requirements-top-section .title-left .sub-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.requirements-top-section .title-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.requirements-mail {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+
+  text-transform: lowercase;
+}
+
+.requirements-mail a {
+  /* border-bottom: 1px solid #000; */
+
+  color: #000;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.requirements-content-section {
+  margin: 60px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (max-width: 768px) {
+    margin: 32px 0;
+    gap: 32px;
+  }
+}
+
+.requirements-content-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.requirements-content-card p {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.requirements-content-card ul li {
+  font-size: 20px;
+  font-weight: 400;
+
+  line-height: 26px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+/* button  */
+
+.job-apply-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-apply-btn .apply-btn {
+  background-color: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  border: 1px solid #000;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.job-apply-btn .share-btn {
+  background-color: #fff;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  border: 1px solid #000;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.job-apply-btn .share-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+/* button  */
+
+/* ******************************
+       wisbato gallery 
+ ****************************** */
+
+.wibato-gallery {
+  margin: 120px 60px;
+
+  @media screen and (max-width: 768px) {
+    margin: 60px 24px;
+  }
+}
+
+.gallery-section {
+  display: grid;
+  place-items: center;
+}
+
+.gallery-container {
+  columns: 4;
+  width: 100%;
+
+  @media screen and (max-width: 1280px) {
+    columns: 3;
+    width: 90%;
+  }
+}
+
+.gallery-container .gallery-box img {
+  width: 313px;
+  height: auto;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.gallery-container .gallery-box:nth-child(4n + 1) img,
+.gallery-container .gallery-box:nth-child(4n + 2) img {
+  margin-top: 30px;
+}
+
+.gallery-container .gallery-box:nth-child(4n + 2) img,
+.gallery-container .gallery-box:nth-child(4n + 3) img {
+  margin-bottom: 30px;
+}
+
+.more-gallery-btn {
+  margin-top: 30px;
+
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    columns: 2;
+    grid-auto-flow: column;
+    width: auto;
+  }
+
+  .gallery-container .gallery-box img {
+    width: 100%;
+    height: auto;
+    margin: 0px 0;
+  }
+
+  .gallery-container .gallery-box:nth-child(odd) img {
+    margin-top: 10px;
+  }
+
+  .gallery-container .gallery-box:nth-child(even) img {
+    margin-bottom: 10px;
+  }
+}

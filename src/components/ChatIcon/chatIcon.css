@@ -1,0 +1,191 @@
+/* *************************************
+                chat icon
+************************************* */
+
+.chat-icon-div {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+.chat-icon-div.scrolled {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.chat-icon-div .chat-icon-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-icon-box .chat-icon-text {
+  width: 87px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #00000080;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-icon-box .chat-icon-text p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.chat-icon-div .chat-icon svg {
+  width: 54px;
+  height: 61px;
+
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+.chat-close-icon {
+  width: 55px;
+  height: 55px;
+  background-color: #f7931e;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  color: white;
+
+  @media screen and (max-width: 768px) {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+.chat-close-icon svg {
+  width: 34px;
+  height: 34px;
+
+  @media screen and (max-width: 768px) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.chat-box-div {
+  width: 0;
+  height: 331px;
+
+  background-color: #ffffff;
+  border-radius: 4px;
+
+  position: absolute;
+  right: 0px;
+  bottom: 130%;
+
+  transition: width 0.5s ease-in-out;
+}
+
+.chat-box-div.show {
+  width: 315px;
+}
+
+.chat-box-header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #f7931e;
+  height: 97px;
+
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-box-header p:nth-child(1) {
+  font-size: 18px;
+  font-weight: 600;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.chat-box-header p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 400;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.chat-box-header p.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.chat-persons {
+  overflow-y: scroll;
+  height: 226px;
+}
+.chat-persons::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #efefef;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.chat-person .chat-platform-icon {
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+}
+
+.chat-person img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.person-name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-transform: capitalize;
+}
+
+.person-name p:nth-child(1) {
+  font-size: 18px;
+  font-weight: 500;
+}
+.person-name p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 400;
+  color: #878787;
+}

@@ -1,0 +1,192 @@
+.work-process-section-x {
+  max-height: 100vh;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.work-process-section-y {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    height: 100%;
+  }
+}
+
+.check-point-icon {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* ****************************************
+            work-process-card
+**************************************** */
+
+.work-process-card {
+  rotate: 90deg;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 150px 60px 0 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 8px;
+  position: absolute;
+  top: 0px;
+  left: 100px;
+
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2))
+    drop-shadow(-4px -4px 6px rgba(0, 0, 0, 0.2));
+
+  @media screen and (max-width: 768px) {
+    padding: 24px 24px 24px 24px;
+    rotate: 0deg;
+
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.work-process-card .title-div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.work-process-card .title-div img {
+  rotate: -90deg;
+}
+
+.work-process-card .title-div h1 {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.work-process-points {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media screen and (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+.work-process-points ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.work-process-points ul li {
+  position: relative;
+  padding-left: 25px;
+}
+
+.work-process-points ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.work-process-points ul li::marker {
+  display: none;
+}
+
+/* **********************************
+********************************** */
+
+.horizontal-section {
+  margin: 120px 0;
+  width: 100vh;
+  height: 100vw;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.boxes {
+  transform: rotate(90deg) translateY(0vh);
+  width: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  transition: background-color 0.5s ease;
+
+  position: relative;
+}
+
+/* **************************************
+      work-process-section-mobile
+************************************** */
+
+.work-process-section-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-process-card-mobile {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title-div-mobile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-div-mobile p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.work-process-points-mobile {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.work-process-points-mobile ul {
+  list-style-type: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-process-points-mobile ul li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.work-process-points-mobile ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.work-process-points-mobile ul li::marker {
+  display: none;
+}

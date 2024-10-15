@@ -1,0 +1,48 @@
+{
+  "name": "wisbato-web-react",
+  "proxy": "https://backend.wisbato.com/",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build:sitemap": "tsc sitemap-generator.ts && node sitemap-generator.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-gtm-module": "^2.0.11",
+    "react-helmet-async": "^2.0.4",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-loading-skeleton": "^3.4.0",
+    "react-lottie": "^1.2.4",
+    "react-multi-carousel": "^2.8.5",
+    "react-paginate": "^8.2.0",
+    "react-phone-number-input": "^3.3.9",
+    "react-router-dom": "^6.22.3",
+    "react-router-sitemap": "^1.2.0",
+    "vite-plugin-pwa": "^0.20.0"
+  },
+  "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.3",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-gtm-module": "^2.0.3",
+    "@types/react-lazy-load-image-component": "^1.6.4",
+    "@types/react-lottie": "^1.2.10",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "react-sitemap-generator": "^1.1.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

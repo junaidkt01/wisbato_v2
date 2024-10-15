@@ -1,0 +1,14 @@
+.bread-crumps-section {
+  @media screen and (max-width: 768px) {
+    margin-top: 32px;
+  }
+}
+
+.bread-crumps-text {
+  @media screen and (max-width: 768px) {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
