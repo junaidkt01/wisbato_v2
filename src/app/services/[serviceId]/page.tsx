@@ -19,10 +19,11 @@ import { StatusContext } from "../../../Hooks/StatusContext";
 import { useFormState } from "../../../Hooks/useFormState";
 import ServicesDropDown from "../../../components/InputFields/ServicesDropDown";
 import AnimationComponent from "../../../components/AnimationComponent/AnimationComponent";
-import { useFetchWorks } from "../../../Hooks/useFetchData";
+import { useFetchTeam, useFetchWorks } from "../../../Hooks/useFetchData";
 import WorksCard from "../../../components/Home/WorksCard";
-import PeopleCarousel from "../../../components/People/PeopleCarousel";
+// import PeopleCarousel from "../../../components/People/PeopleCarousel";
 import OutComes from "../_components/OutComes";
+import TeamCateCard from "../../team/_components/TeamCateCard";
 
 
 const ServiceDetailed = () => {
@@ -43,7 +44,6 @@ const ServiceDetailed = () => {
     const careersIdValue = title ? title : "Default value";
 
     const [data, setData] = useState<Service | undefined>(undefined);
-    // const [isLoadingData, setLoadingData] = useState(true);
 
     function transformSlug(slug: string) {
         if (!slug) return '';
@@ -54,28 +54,6 @@ const ServiceDetailed = () => {
             .join(' ')
             .toUpperCase();
     }
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         setLoadingData(true); // Set loading state
-    //         try {
-    //             const service = services.find((item) => item.slug === careersIdValue);
-    //             if (service) {
-    //                 setData(service as Service);
-    //             } else {
-    //                 setData(undefined);
-    //             }
-    //         } catch (error) {
-    //             console.error("Error fetching data:", error);
-    //             setData(undefined);
-    //         } finally {
-    //             setLoadingData(false); // Clear loading state
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, [careersIdValue]);
-
     useEffect(() => {
         const service = services.find((item: any) => item?.slug === careersIdValue);
 
@@ -102,8 +80,11 @@ const ServiceDetailed = () => {
 
     const { works, isLoading } = useFetchWorks();
 
-    console.log(works, data?.slug)
-
+    const { team, isLoading: teamLoading, error } = useFetchTeam()
+    console.log(team)
+    if (teamLoading || error) {
+        return <h1>loading</h1>;
+    }
     return (
         <>
             {/* {!isLoadingData && data ? */}
@@ -145,7 +126,7 @@ const ServiceDetailed = () => {
                                 <>
                                     {
                                         works.filter(work =>
-                                            work.servicesProvides.some(service => service.toUpperCase().includes(transformSlug(data.slug)))
+                                            work.servicesProvides.some(service => service.toUpperCase().includes(transformSlug(data.title)))
                                         )
                                             .slice(0, 1)
                                             .map((_, i) => (
@@ -155,7 +136,7 @@ const ServiceDetailed = () => {
                                     <div className="works-card-list">
                                         {
                                             works.filter(work =>
-                                                work.servicesProvides.some(service => service.toUpperCase().includes(transformSlug(data.slug)))
+                                                work.servicesProvides.some(service => service.toUpperCase().includes(transformSlug(data.title)))
                                             )
                                                 .slice(0, 4)
                                                 .map((work, index) => (
@@ -227,43 +208,15 @@ const ServiceDetailed = () => {
                             <OutComes outComes={data?.outcomes} />
                         </div>
 
-                        {/* <div className="related-works-section">
-                            <SectionTitle title='related works' />
-
-                            <div className={`related-works-content-section ${hideLock ? "hide" : ""}`}>
-                                <div className="related-works-cards" style={{ display: hideLock ? "none" : "block" }}>
-                                    {
-                                        Array.from({ length: 7 }).map((_, i) => <div key={i} className={`related-works-card ${fadeWorks ? "fade-works" : ""}`}>
-                                            <div className="related-works-card-content">
-                                                <svg className='lock-icon' width="106" height="112" viewBox="0 0 106 112" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M96.4052 111.868C97.3551 111.777 98.2728 111.545 99.1345 111.192C100.004 110.84 100.819 110.363 101.573 109.762C101.723 109.645 101.9 109.491 102.082 109.322C102.21 109.205 102.335 109.085 102.457 108.961C102.761 108.658 103.037 108.354 103.183 108.152C103.271 108.035 103.44 107.808 103.557 107.644C103.731 107.411 103.92 107.099 104.103 106.748C104.503 106.015 104.812 105.226 105.013 104.395C105.171 103.74 105.256 103.06 105.272 102.375C105.3 101.317 105.158 100.252 104.846 99.2341C104.764 98.9617 104.669 98.6939 104.564 98.4321C104.359 97.9362 104.278 97.7612 103.933 97.1427C103.764 96.8394 103.321 96.1859 103.186 96.0517C103.145 96.0109 103.064 95.9117 103.011 95.83C102.906 95.6737 102.607 95.3625 102.273 95.0449C102.029 94.8095 101.774 94.5771 101.584 94.424L101.17 94.0798L101.124 94.0798C100.295 93.4962 99.4613 93.0803 98.4827 92.7613C97.5431 92.452 96.8253 92.3354 95.5298 92.2712C94.8879 92.242 94.2226 92.1895 94.0592 92.1603L94.018 92.1522L93.6769 92.067C93.2042 91.9561 92.428 91.6702 92.1129 91.4952C92.0724 91.4739 92.0201 91.4455 91.9639 91.415L91.9637 91.4149L91.9636 91.4149C91.8785 91.3687 91.7842 91.3175 91.7075 91.2782C91.5268 91.171 91.3513 91.0558 91.1814 90.9328C91.0101 90.8051 90.8269 90.6581 90.6522 90.5085C89.9919 89.9239 89.4321 89.2048 88.9879 88.3623C88.7078 87.8255 88.5678 87.703 88.2643 87.703L88.2642 87.703L88.2613 87.703C87.9578 87.703 87.8178 87.8255 87.5377 88.3622C87.0934 89.2049 86.5336 89.924 85.8732 90.5088C85.6987 90.6582 85.5157 90.805 85.3445 90.9326C85.1745 91.0557 84.9989 91.171 84.818 91.2783C84.7413 91.3176 84.6471 91.3687 84.562 91.4149L84.5619 91.4149C84.5056 91.4455 84.4533 91.4739 84.4127 91.4952C84.0976 91.6703 83.3214 91.9561 82.8487 92.067L82.5077 92.1522L82.4664 92.1603C82.303 92.1895 81.6377 92.242 80.9958 92.2712C79.7003 92.3354 78.9825 92.452 78.0429 92.7612C77.0643 93.0803 76.2311 93.4962 75.4019 94.0798L75.3556 94.0798L74.9413 94.424C74.7513 94.577 74.4965 94.8093 74.2534 95.0445C73.9188 95.3623 73.6197 95.6737 73.5144 95.83C73.4619 95.9117 73.3802 96.0109 73.3393 96.0517C73.2051 96.1859 72.7616 96.8394 72.5923 97.1427C72.248 97.7612 72.1663 97.9362 71.9621 98.4321C71.8561 98.6941 71.7618 98.9622 71.6793 99.2347C71.3671 100.253 71.2253 101.318 71.2538 102.375C71.2693 103.06 71.355 103.74 71.5127 104.395C71.7136 105.226 72.0225 106.015 72.4222 106.748C72.6059 107.099 72.7949 107.411 72.9688 107.644C73.0855 107.808 73.2548 108.035 73.3423 108.152C73.4886 108.354 73.7653 108.658 74.0689 108.961C74.1905 109.085 74.3153 109.205 74.4431 109.322C74.6254 109.491 74.8025 109.645 74.953 109.762C75.7066 110.363 76.5226 110.841 77.3926 111.192C78.2539 111.545 79.1711 111.777 80.1204 111.868C80.149 111.871 80.197 111.873 80.2629 111.876C80.7607 111.91 84.5071 111.925 88.2687 111.924C92.0257 111.925 95.7642 111.909 96.2624 111.876C96.3285 111.873 96.3765 111.871 96.4052 111.868ZM80.1818 109.943C79.8815 109.907 79.5875 109.857 79.3002 109.792C78.4848 109.596 77.6492 109.254 76.9235 108.819C76.4159 108.503 75.9427 108.124 75.5074 107.685C74.3703 106.548 73.6542 105.219 73.326 103.645C73.262 103.311 73.2196 102.97 73.1982 102.62C73.1713 101.986 73.2013 101.209 73.284 100.754C73.4046 100.092 73.6345 99.3889 73.933 98.7391C73.9636 98.6743 73.9952 98.609 74.0279 98.543C74.2605 98.0701 74.5325 97.6306 74.8416 97.2265C75.1752 96.8094 75.7532 96.2283 76.1601 95.8891C76.3558 95.735 76.5599 95.5901 76.7721 95.4545C77.4813 95.0138 78.3839 94.6187 79.1489 94.4298C79.6354 94.3105 79.9311 94.2506 81.206 94.223L87.9695 94.2081L88.2619 94.2075L88.5561 94.2081L95.32 94.223C96.5945 94.2506 96.8902 94.3105 97.3767 94.4298C98.1416 94.6186 99.0439 95.0136 99.7531 95.4542C99.9654 95.5898 100.17 95.7349 100.365 95.889C100.772 96.2282 101.35 96.8092 101.684 97.2263C101.993 97.6305 102.265 98.07 102.498 98.543C102.53 98.6091 102.562 98.6745 102.593 98.7394C102.891 99.3891 103.121 100.093 103.242 100.754C103.324 101.209 103.354 101.986 103.327 102.62C103.306 102.97 103.264 103.311 103.2 103.645C102.871 105.219 102.155 106.548 101.018 107.685C100.583 108.124 100.11 108.503 99.6018 108.82C98.8764 109.254 98.0411 109.596 97.226 109.791C96.9385 109.857 96.6443 109.907 96.3438 109.943C96.2923 109.949 96.1496 109.955 95.9303 109.96C94.7643 109.986 91.5674 110 88.3542 110C85.0696 110 81.762 109.987 80.5838 109.96C80.371 109.955 80.2324 109.949 80.1818 109.943ZM78.2545 102.002C78.2545 100.39 79.561 99.0834 81.1727 99.0834C82.7843 99.0834 84.0908 100.39 84.0908 102.002C84.0908 103.613 82.7843 104.92 81.1727 104.92C79.561 104.92 78.2545 103.613 78.2545 102.002ZM92.4372 102.002C92.4372 100.39 93.7437 99.0833 95.3554 99.0833C96.967 99.0833 98.2736 100.39 98.2736 102.002C98.2736 103.613 96.967 104.92 95.3554 104.92C93.7437 104.92 92.4372 103.613 92.4372 102.002Z" fill="#F7931E" />
-                                                    <path d="M71.9844 107.948H10.061C4.92447 107.948 0.743386 103.768 0.742188 98.6297C0.742188 98.6296 0.742188 98.6296 0.742188 98.6295V48.0561C0.742188 42.9183 4.92317 38.7373 10.061 38.7373H71.9844C77.1222 38.7373 81.3032 42.9183 81.3032 48.0561V98.6297C81.3032 103.767 77.1222 107.948 71.9844 107.948ZM10.0622 43.7368C7.68023 43.7368 5.7429 45.6741 5.7429 48.0561L5.74171 98.6296C5.74171 101.012 7.67902 102.949 10.061 102.949H71.9856C74.3676 102.949 76.3049 101.012 76.3049 98.6297V48.0561C76.3049 45.6741 74.3676 43.7368 71.9856 43.7368H10.0622Z" fill="white" stroke="black" />
-                                                    <path d="M41.0232 5.95679C31.9182 5.95679 24.5093 13.3644 24.5093 22.4707V33.8078H19.5098V22.4707C19.5098 10.6086 29.1611 0.957275 41.0232 0.957275C52.8853 0.957275 62.5366 10.6086 62.5366 22.4707V33.8078H57.5371V22.4707C57.5371 13.3644 50.1282 5.95679 41.0232 5.95679Z" stroke="black" />
-                                                    <path d="M38.5251 73.228V72.8493L38.1606 72.7467C33.704 71.4927 30.4258 67.4006 30.4258 62.5525C30.4258 56.7079 35.1803 51.9534 41.0249 51.9534C46.8695 51.9534 51.624 56.7079 51.624 62.5525C51.624 67.4006 48.3458 71.4927 43.8892 72.7467L43.5246 72.8493V73.228V82.4508H38.5251V73.228ZM46.6245 62.5525C46.6245 59.465 44.1137 56.9529 41.0249 56.9529C37.9361 56.9529 35.4253 59.465 35.4253 62.5525C35.4253 65.6399 37.9361 68.1521 41.0249 68.1521C44.1137 68.1521 46.6245 65.6399 46.6245 62.5525Z" stroke="black" />
-                                                    <path d="M66.0723 93.9568C66.0723 91.7476 67.8631 89.9568 70.0723 89.9568H71.6879C73.897 89.9568 75.6879 91.7476 75.6879 93.9568V96.2439V98.5311C75.6879 100.74 73.897 102.531 71.6879 102.531H70.0723C67.8631 102.531 66.0723 100.74 66.0723 98.5311V93.9568Z" fill="white" />
-                                                </svg>
-                                                <p className='related-works-card-text'>Curious about Digital Marketing Magic? Unlock to See How It Works!</p>
-                                                <ReadFullBtn onClick={scrollToBottom} title='see works' />
-                                            </div>
-                                        </div>)
-                                    }
-                                </div>
-                            </div>
-
-                            <div ref={bottomDivRef} className="project-cards-list">
-                                <ProjectsCard bgColor="#FFDD78" isFade={fadeWorks} />
-                                <ProjectsCard bgColor="#C3DFFF" isFade={fadeWorks} />
-                                <ProjectsCard bgColor="#DCD2F7" isFade={fadeWorks} />
-                                <ProjectsCard bgColor="#F7D2DB" isFade={fadeWorks} />
-                            </div>
-                        </div> */}
-
-                        <div className='people-listing' >
+                        {/* <div className='people-listing' >
                             <div style={{ margin: "60px 24px" }} >
                                 <SectionTitle title={data.peopleTitle} />
                             </div>
                             <PeopleCarousel />
-                        </div>
+                        </div> */}
+
+                        {/* <TeamCateCard service={data.title} /> */}
+                        <TeamCateCard service={data.title} />
 
                         <div className="services-faq-section">
                             <SectionTitle title='faq' />

@@ -366,7 +366,7 @@ export const outcomes = [
       advantages: {
         id: 1,
         title: "Advantages of IT support",
-        description: "A well-designed website offers a multitude of benefits",
+        // description: "A well-designed website offers a multitude of benefits",
         points: [
           {
             id: 1,
@@ -403,8 +403,8 @@ export const outcomes = [
       disAdvantages: {
         id: 1,
         title: "The Drawbacks of avoiding IT support",
-        description:
-          "Running a business without a website means missing out on a massive audience",
+        // description:
+        //   "Running a business without a website means missing out on a massive audience",
         points: [
           {
             id: 1,
@@ -606,7 +606,7 @@ export const outcomes = [
       advantages: {
         id: 1,
         title: "Benefits of implementing SEO for your website",
-        description: "A well-designed website offers a multitude of benefits",
+        // description: "A well-designed website offers a multitude of benefits",
         points: [
           {
 
@@ -644,8 +644,8 @@ export const outcomes = [
       disAdvantages: {
         id: 1,
         title: "What Happens When You Don't Use SEO",
-        description:
-          "Running a business without a website means missing out on a massive audience",
+        // description:
+        //   "Running a business without a website means missing out on a massive audience",
         points: [
           {
             id: 1,
@@ -737,7 +737,7 @@ Our comprehensive branding capabilities start with an intensive consultation and
       advantages: {
         id: 1,
         title: "Advantages of Branding",
-        description: "A well-designed website offers a multitude of benefits",
+        // description: "A well-designed website offers a multitude of benefits",
         points: [
           {
 
@@ -775,8 +775,8 @@ Our comprehensive branding capabilities start with an intensive consultation and
       disAdvantages: {
         id: 1,
         title: "Disadvantage of Not Having Branding",
-        description:
-          "Running a business without a website means missing out on a massive audience",
+        // description:
+        //   "Running a business without a website means missing out on a massive audience",
         points: [
           {
             id: 1,
@@ -1245,7 +1245,7 @@ export const services = [
     peopleTitle: "Web Development Team",
     metaTitle: "Best Web Design & Development Company In Calicut, Kerala",
     metaDescription:
-      "Are you planning to develop a website for your business? Wisbato is the best web design & development company in Calicut, Contact now for your custom website design in Kerala.",
+      "Are you planning to develop a website for your business in Calicut? Wisbato is the best web design & development company in Calicut, Contact now for your custom website design in Kozhikode.",
     description:
       "We believe in developing websites that reach your potential clients through visually appealing and highly responsive websites.",
     image: "/images/services/webdevelopment",
@@ -1525,7 +1525,7 @@ export const services = [
     peopleTitle: "Application Development Team",
     metaTitle: "Application Development Company In Calicut",
     metaDescription:
-      "Wisbato builds custom software applications in Calicut.. We craft user-friendly mobile and web applications to meet your unique business needs. Get a free quote today!",
+      "Wisbato builds custom web applications in Calicut. We craft user-friendly mobile and web applications to meet your unique business needs in Calicut. Get a free quote today!",
     description:
       "For a better online presence, we ensure functionality with our unique app services. Make your application more secure and free of bugs, as we follow neat structures of coding.",
     image: "/images/services/mobileapp",
@@ -1548,6 +1548,7 @@ export const services = [
         id: 1,
         title: "Idea Generation and Planning",
         image: "/images/workingProcess/application development/Idea Generation and Planning.jpg",
+        alt:"Idea Generation and Planning",
         list: [
           {
             id: 1,
@@ -1579,6 +1580,7 @@ export const services = [
         id: 2,
         title: "Wireframing and Prototyping",
         image: "/images/workingProcess/application development/Wireframing and Prototyping.jpg",
+        alt:"Wireframing and Prototyping",
         list: [
           {
             id: 5,
@@ -1610,6 +1612,7 @@ export const services = [
         id: 3,
         title: "Design",
         image: "/images/workingProcess/application development/Design.jpg",
+        alt:"Design",
         list: [
           {
             id: 9,
@@ -1640,6 +1643,7 @@ export const services = [
         id: 4,
         title: "Development",
         image: "/images/workingProcess/application development/Development.jpg",
+        alt:"Development",
         list: [
           {
             id: 13,
@@ -1671,6 +1675,7 @@ export const services = [
         id: 5,
         title: "Testing and Deployment",
         image: "/images/workingProcess/application development/Testing and Deployment.jpg",
+        alt:"Testing and Deployment",
         list: [
           {
             id: 17,
@@ -1702,6 +1707,7 @@ export const services = [
         id: 6,
         title: "Maintenance and Updates",
         image: "/images/workingProcess/application development/Maintenance and Updates.jpg",
+        alt:"Maintenance and Updates",
         list: [
           {
             id: 21,
@@ -1794,6 +1800,7 @@ export const services = [
         id: 1,
         title: "Research and Analysis",
         image: "/images/workingProcess/branding/Research and Analysis.jpg",
+        alt:"branding agency in Calicut",
         list: [
           {
             id: 1,
@@ -1825,6 +1832,7 @@ export const services = [
         id: 2,
         title: "Defining Brand Strategy",
         image: "/images/workingProcess/branding/Defining Brand Strategy.jpg",
+        alt:"best branding company in Kozhikode",
         list: [
           {
             id: 5,
@@ -1856,6 +1864,7 @@ export const services = [
         id: 3,
         title: "Creation of Brand Identity and Messaging",
         image: "/images/workingProcess/branding/Creation of Brand Identity and Messaging.jpg",
+        alt:"branding agency for your business growth",
         list: [
           {
             id: 9,
@@ -1887,6 +1896,7 @@ export const services = [
         id: 4,
         title: "Brand Implementation and Activation",
         image: "/images/workingProcess/branding/Brand Implementation and Activation.jpg",
+        alt:"Brand Implementation and Activation",
         list: [
           {
             id: 13,
@@ -1918,6 +1928,8 @@ export const services = [
         id: 5,
         title: "Monitor and Manage Brand Perception",
         image: "/images/workingProcess/branding/Monitor and Manage Brand Perception.jpg",
+        alt:"Monitor and Manage Brand Perception",
+
         list: [
           {
             id: 17,
@@ -1943,6 +1955,7 @@ export const services = [
         id: 6,
         title: "Brand Evolution and Adaptation",
         image: "/images/workingProcess/branding/Brand Evolution and Adaptation.jpg",
+        alt:"Brand Evolution and Adaptation",
         list: [
           {
             id: 20,
@@ -2007,11 +2020,11 @@ export const services = [
   {
     id: 4,
     slug: "ecommerce-development-company-in-calicut",
-    title: "Ecommerce Development",
+    title: "ECommerce Development",
     peopleTitle: "Ecommerce Development Team",
-    metaTitle: "Leading E-commerce Web Designing Company In Calicut, Kerala",
+    metaTitle: "Leading E-commerce Web Designing Company In Calicut",
     metaDescription:
-      "Are you planning to create an E-Commerce website for your business? Wisbato is Leading E-Commerce web design & development company in Calicut, Kerala | contact now",
+      "Are you planning to create an E-Commerce website for your business in Calicut? Wisbato is Leading E-Commerce web design & development company in Calicut | contact now",
     description:
       "With our tailored eCommerce solutions, you may provide a unique shopping experience to your clients, besides boosting your sales.",
     image: "/images/services/ecommerce",
@@ -2341,9 +2354,9 @@ export const services = [
     title: "Digital Marketing",
     peopleTitle: "Digital Marketing Team",
 
-    metaTitle: "Wisbato- Best Digital Marketing Agency In Calicut, Kerala",
+    metaTitle: "Wisbato- Best Digital Marketing Agency In Calicut.",
     metaDescription:
-      "Select Best digital marketing agency in Calicut, Kerala. We provide all digital marketing services like SEO, SMM, SEM, in your business, that boost your online presents. Contact now",
+      "Select best digital marketing agency in Calicut, . We provide all digital marketing services like SEO, SMM, SEM, in your business, that boost your online presents. Contact now",
     description:
       "Build your brand values by letting us promote your products and services through diverse social channels. Connect with a larger audience using the right channels.",
     image: "images/services/digitalmarketing",
@@ -2548,7 +2561,8 @@ export const services = [
       {
         id: 1,
         title: "Keyword Research",
-        image: "/images/keyword_research.jpg",
+        image: "/images/workingProcess/seo/Keyword Research.jpg",
+        alt:"Keyword Research",
         list: [
           {
             id: 1,
@@ -2579,7 +2593,8 @@ export const services = [
       {
         id: 2,
         title: "Competitive Research",
-        image: "/images/competitive_research.jpg",
+        image: "/images/workingProcess/seo/Competitive Research.jpg",
+        alt:"Competitive Research",
         list: [
           {
             id: 5,
@@ -2604,7 +2619,9 @@ export const services = [
       {
         id: 3,
         title: "On-Page Optimization",
-        image: "/images/on_page_optimization.jpg",
+        image: "/images/workingProcess/seo/On-Page Optimization.jpg",
+        git:"On-Page Optimization",
+
         list: [
           {
             id: 8,
@@ -2635,7 +2652,8 @@ export const services = [
       {
         id: 4,
         title: "Technical SEO",
-        image: "/images/technical_seo.jpg",
+        image: "/images/workingProcess/seo/Technical SEO.jpg",
+        git:"Technical SEO",
         list: [
           {
             id: 12,
@@ -2666,7 +2684,8 @@ export const services = [
       {
         id: 5,
         title: "Off-Page Optimization",
-        image: "/images/off_page_optimization.jpg",
+        image: "/images/workingProcess/seo/Off-Page Optimization.jpg",
+        git:"Off-Page Optimization",
         list: [
           {
             id: 16,
@@ -2697,7 +2716,8 @@ export const services = [
       {
         id: 6,
         title: "Monitoring and Analysis",
-        image: "/images/monitoring_and_analysis.jpg",
+        image: "/images/workingProcess/seo/Monitoring and Analysis.jpg",
+        git:"Monitoring and Analysis",
         list: [
           {
             id: 20,
@@ -2761,7 +2781,7 @@ export const services = [
     peopleTitle: "Mobile App Development Team",
     metaTitle: "Mobile App Development Company in Calicut | Develop Now",
     metaDescription:
-      "Wisbato provides the best mobile app for your business that can help your business growth & online presents all over the world. We are creating Unique android, ios, flutter apps in Calicut, Kerala.",
+      "Wisbato provides the best mobile app for your business in Calicut, that can help your business growth & online presents all over the world. We are creating Unique android, ios, flutter apps in Calicut.",
     description:
       "Our mobile app services will make your business bigger as we provide bespoke web solutions to each of our clients.",
     image: "",

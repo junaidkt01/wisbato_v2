@@ -153,11 +153,15 @@
     display: flex;
   }
 }
+
 /* *********** testing for return navlinks to show *********** */
 
 .header-rest-links .nav-link {
   text-decoration: none;
   color: #000;
+}
+.header-rest-links .nav-link:last-child {
+  margin-right: 40px;
 }
 
 .header-rest-links .nav-link:hover {

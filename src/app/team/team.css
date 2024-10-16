@@ -1,237 +1,129 @@
 .team-banner-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 60px;
 
+  margin: 0 60px;
 }
 
-.team-image {
-    border-radius: 20px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
-    width: 1320px;
-    height: 600px;
-    display: flex;
-    flex-wrap: wrap;
+.banner-content-wrapper {
+  position: relative;
 }
 
-.team-title {
-    width: 100% 782px;
-    height: auto 94px;
-
-    margin: 368px 269px 138px 269px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
+.banner-content-wrapper img {
+  width: 100%;
 }
 
-.team-title h1 {
-    text-align: center;
-  font-size: 4.5rem;
-    font-style: normal;
-    font-weight: 800;
-    color: #ffffff;
-    margin-top: 16px;
+.team-banner-title {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-
+  color: white;
 }
 
-.team-title p {
-    font-size: 32px;
-    font-weight: 500;
-
-    color: #ffffff;
-
+.team-banner-title h2 {
+  font-size: clamp(26px, 4vw, 72px);
 }
 
-.sub-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 60px 115px 90px 115px;
+.team-banner-title p {
+  font-size: clamp(13px, 4vw, 32px);
+  font-weight: 500;
 }
 
-.aditional-content {
-    color: #202124;
-
-    text-align: center;
-    font-size: 36px;
-    font-weight: 500;
-
-}
-
-/* management Team */
-
-/* team moments section */
-.team-moments {
-    /* height: 885px; */
-    /* height: 100vh; */
-    background: #202124;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.team-content {
-    margin-top: 60px;
-}
-
-.team-moments h1 {
-    color: #FFF;
-
-    text-align: center;
-    /* font-size: 72px; */
-    font-size: clamp(52px,4vw,72px);
-    font-weight: 500;
-    text-transform: uppercase;
-    width: auto 869px;
-    /* height: auto 94px; */
-
-
-}
-
-.team-moments p {
-    color: #FFF;
-    
-    text-align: center;
-    /* font-size: 24px; */
-    font-size: clamp(22px,4vw,24px);
-    font-weight: 400;
-    
-    margin-top: 16px;
-
+.team-banner-section .sub-content p {
+  font-size: clamp(18px, 4vw, 36px);
+  font-weight: 500;
 }
 
 /* gallery section */
 
+.team-moments-wrapper {
+  background-color: #202124;
+  padding: 20px 0;
+  color: white;
+}
+
+.team-moments {
+  margin: 40px 60px;
+}
+
+.team-moments .team-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team-moments .team-content h2 {
+  font-size: clamp(26px, 4vw, 72px);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.team-moments .team-content p {
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 400;
+}
+
 .gallery {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 200px;
-    grid-auto-flow: dense;
-    margin: 40px 61px 60px 61px
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
 }
 
-.gallery>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gallery > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery>div>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+.gallery > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .gallery .tall {
-    grid-row: span 2;
+  grid-row: span 2;
 }
 
+/* RESPONSIVE */
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width:768px) {
-   .team-banner-section{
-    display: flex;
-    flex-direction: column;
-   }
-   .team-image{
-    width: 100%;
-    height: auto;
-   }
-   .team-title{
-    width: 100% ;
-    height: auto ;
+@media (max-width: 1080px) {
+  .team-banner-section {
+    margin: 0 32px;
+    gap: 30px;
+  }
 
-   
-    position: absolute;
-    margin: 11.5rem 8.125rem 4.31rem 8.125rem;
-
-   }
-
-    .team-title h1{
-        font-size: 2.5rem;
-
-    }
-    .team-title p{
-        font-size: 1.5rem;
-        font-weight: 500; 
-
-    }
-    .sub-content{
-        margin: 45px 86px 68px 86px;
-
-    }
-    .aditional-content {
-        font-size: 29px; 
-        font-weight: 500; 
-
-    }
+  .team-moments {
+    margin: 40px 30px;
+  }
 }
-@media screen and (max-width:480px) {
-    .team-banner-section{
-     display: flex;
-     flex-direction: column;
-    }
-    .team-image{
-     width: 100%;
-     height: auto;
-    }
-    .team-title{
-     width: 100% ;
-     height: auto ;
- 
-     position: absolute;
-     margin: 92px 65px 34px 65px; 
-    }
- 
-     .team-title h1{
-        font-size: 1.5rem;
- 
-     }
-     .team-title p{
-        font-size: 0.8rem;
-        font-weight: 500; 
-     }
-     .sub-content{
-        margin: 32px 60px 48px 60px;
-     }
-     .aditional-content{
-        font-size: 13px; 
-        font-weight: 500;
-     }
- }
- @media screen and (max-width: 1080px) {
-    .team-banner-section {
-        display: flex;
-        flex-direction: column;
-    }
-    .team-image {
-        width: 100%;
-        height: auto; 
-    }
-    .team-title {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        margin: 70px 40px 30px 40px; 
-    }
-    .team-title h1 {
-        font-size: 2rem;
-    }
-    .team-title p {
-        font-size: 1rem;
-        font-weight: 500;
-    }
-    .sub-content {
-        margin: 40px 40px 50px 40px;
-    }
-    .aditional-content {
-        font-size: 16px; 
-        font-weight: 500;
-    }
+@media (max-width: 768px) {
+  .team-banner-section {
+    margin: 0 24px;
+    gap: 16px;
+  }
+
+  .team-banner-title {
+    top: 50%;
+  }
+
+  .team-moments {
+    margin: 40px 24px;
+  }
+}
+@media (max-width: 480px) {
+  .team-banner-section {
+    margin: 0 16px;
+  }
+
+  .team-moments {
+    margin: 40px 16px;
+  }
 }

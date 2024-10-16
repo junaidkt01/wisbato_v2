@@ -44,11 +44,6 @@ const NavLinks = () => {
     { href: "/careers", text: "careers" }
   ];
 
-  // const renderLinks = (isDropdown = false) =>
-  //   navLinks.map(({ href, text }, index) => (
-  //     <Link key={index} href={href} className={`nav-link${isDropdown ? "-res" : ""}`} style={{ color: params === href ? "#f7931e" : "" }}>{text}</Link>
-  //   ));
-
   const renderLinks = (isDropdown = false) =>
     navLinks.map(({ href, text }, index) => {
       const isActive = params.startsWith(href);

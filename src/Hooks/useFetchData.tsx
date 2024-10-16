@@ -176,6 +176,7 @@ interface TeamCategory {
     department: string;
     description: string;
     members: TeamMember[];
+    services: string[]
 }
 
 export const useFetchTeam = () => {
